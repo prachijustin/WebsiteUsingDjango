@@ -1,0 +1,274 @@
+{% extends "base.html" %}
+{% block body_block %}
+{% load staticfiles %}
+
+          <!--Home page style-->
+        <style>
+          .carousel-excerpt {
+    background: rgba(51,51,51,0.38);
+    padding: 7% 5%;
+    font-size: 30px;
+    max-width: 100%;
+}
+        </style>
+          <header id="home" class="home">
+            <div class="overlay-fluid-block" >
+              <div class="container text-center"  width="100%" height="100%">
+                <div class="row" >
+                  <div class="home-wrapper">
+                    <div class="col-md-10 col-md-offset-1">
+                      <div class="home-content">
+                          <br><br><br><br><br>
+                          <div class="carousel-excerpt"> <h1 style="color: white; size: 1em;">BRING YOUR BIG DATA TO LIFE WITH <br>RAY ADVISORS</h1></div>
+                      </div>
+                    </div>
+                  </div>
+                </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+              </div>
+            </div>
+          </header>
+
+          <!-- Sections -->
+          <section id="service" class="features sections">
+            <div class="container" width="100%" height="100%">
+              <div class="row">
+                <div class="header-section text-center">
+                 <h2 id="conthe">OUR EXPERTIES </h2>
+               </div>
+             </div>
+             <div class="row">
+               <div class="col-md-3 col-sm-6 padleft-right">
+                 <div class="ser">
+                   <img src="{% static "assets/images/serlogo/s1.png" %}" style="margin:20px 0px">
+                   <p><b>Secretarial Audit & Legal Due Diligence</b></p>
+                 </div>
+               </div>
+               <div class="col-md-3 col-sm-6 padleft-right">
+                <div class="ser">
+                  <img src="{% static "assets/images/serlogo/s2.png" %}" style="margin:20px 0px">
+                  <p><b>Corporate Compliance Management</b></p>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 padleft-right">
+                <div class="ser">
+                  <img src="{% static "assets/images/serlogo/s3.jpg" %}" style="margin:20px 0px">
+                  <p><b>Drafting Of Commercial Contracts</b></p>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 padleft-right">
+                <div class="ser">
+                  <img src="{% static "assets/images/serlogo/s4.png" %}" style="margin:20px 0px">
+                  <p><b>Corporate Restructuring</b></p>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 padleft-right">
+                <div class="ser">
+                  <img src="{% static "assets/images/serlogo/s5.png" %}" style="margin:20px 0px">
+                  <p><b>Intellectual Property Rights (IPRs) & Its Management</b></p>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 padleft-right">
+                <div class="ser">
+                  <img src="{% static "assets/images/serlogo/s6.png" %}" style="margin:20px 0px">
+                  <p><b>Company Secretarial Services</b></p>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6" margin="auto">
+                <div class="ser">
+                  <img src="{% static "assets/images/serlogo/s7.png" %}" style="margin:20px 0px">
+                  <p><b>Litigation, Dispute Redressal, Representation & Appearance Services</b></p>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 padleft-right">
+                <div class="ser">
+                  <img src="{% static "assets/images/serlogo/s8.png" %}" style="margin:20px 0px">
+                  <p><b>India Entry Services, Foreign Collaborations & Joint Ventures</b></p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </section><!--End of Services Section -->
+
+        <div id="link" class="price sections jumbotron" style="align:center; padding-top: 10px; padding-bottom: 20px">
+        <div class="head_title text-center "><br><br><br><br><br>
+           <h2>Important/Related Links</h2>
+        </div>
+        <div class="cd-pricing-container cd-has-margins" >
+          <div class="cd-pricing-switcher" >
+            <p class="fieldset">
+              <input type="radio" name="duration-2" value="monthly" id="monthly-2" checked>
+              <label for="monthly-2">Important Links</label>
+              <input type="radio" name="duration-2" value="yearly" id="yearly-2">
+              <label for="yearly-2">Related Links</label>
+              <span class="cd-switch"></span>
+            </p>
+          </div> <!-- .cd-pricing-switcher -->
+
+          <ul class="cd-pricing-list cd-bounce-invert" >
+            <li>
+              <ul class="cd-pricing-wrapper">
+                <li data-type="monthly" class="is-visible">
+
+                  <div class="cd-pricing-body">
+                    <ul class="cd-pricing-features "style="text-align:justify">
+                      <li class="impInfoLi" ><p class="cont" style="text-align:justify"><a href="https://ebiz.gov.in/" target="_blank"><img alt="EBIZ" src="{% static "assets\images\logoil\ebiz.png" %}"/><b>EBIZ</b></a></p></li>
+                      <li class="impInfoLi"><p class="cont" style="text-align:justify"><a href="https://www.rbi.org.in"target="_blank"><img alt="NSEI" src="{% static "assets\images\logoil\rbi.jpg" %}"/><b>Reserve Bank of India</b></a></p></li>
+                      <li class="impInfoLi"><p class="cont" style="text-align:justify"><a href="http://www.mca.gov.in/" target="_blank"><img alt="MCA" src="{% static "assets\images\logoil\mca.jpg" %}"/><b>Ministry of Corporate Affairs</b></a></p></li>
+                      <li class="impInfoLi"><p class="cont" style="text-align:justify"><a href="https://fcraonline.nic.in/home/index.aspx" target="_blank"><img alt="FSS" src="{% static "assets\images\logoil\illb.png" %}"/><b>Food Safety And Standards</b></a></p></li>
+                      <li class="impInfoLi"><p class="cont" style="text-align:justify"><a href="http://www.ibbi.gov.in/" target="_blank"><img alt="IBBI" src="{% static "assets\images\logoil\illb.png" %}"/><b>Insolvency and Bankruptcy Board of India</b></a></p></li>
+                      <li class="impInfoLi"><p class="cont" style="text-align:justify"><a href="https://www.nseindia.com/" target="_blank"><img alt="RBI" src="{% static "assets\images\logoil\nse.gif" %}"/><b>&nbsp&nbspNational Stock Exchange of India</b></a></p></li>
+                      <li class="impInfoLi"><p class="cont" style="text-align:justify"><a href="http://www.ipindia.nic.in/" target="_blank"><img  alt="IPR" src="{% static "assets\images\logoil\illb.png" %}"/><b>Ministry of Intellectual Property Rights</b></a></p></li>
+
+                    </ul>
+                  </div> <!-- .cd-pricing-body -->
+
+                </li>
+
+                <li data-type="yearly" class="is-hidden">
+
+
+                  <div class="cd-pricing-body">
+                    <ul class="cd-pricing-features "style="text-align:justify">
+                     <li class="impInfoLi" ><p class="cont" style="text-align:justify"><a href="http://ipindiaonline.gov.in/tmrpublicsearch/frmmain.aspx" target="_blank"><img alt="EBIZ" src="{% static "assets\images\logoil\illb.png" %}"/><b>Public Search of Trademark</b></a></p></li>
+                     <li class="impInfoLi" ><p class="cont" style="text-align:justify"><a href="http://www.mca.gov.in/mcafoportal/enquireFeePreLogin.do" target="_blank"><img alt="EBIZ" src="{% static "assets\images\logoil\illb.png" %}"/><b>Fee Calculator</b></a></p></li>
+                     <li class="impInfoLi" ><p class="cont" style="text-align:justify"><a href="http://www.mca.gov.in/mcafoportal/mcatrackSRNLayout.do" target="_blank"><img alt="EBIZ" src="{% static "assets\images\logoil\illb.png" %}"/><b>Track SRN/Transaction status</b></a></p></li>
+                     <li class="impInfoLi" ><p class="cont" style="text-align:justify"><a href="http://www.mca.gov.in/mcafoportal/noticesLayout.do" target="_blank"><img alt="EBIZ" src="{% static "assets\images\logoil\illb.png" %}"/><b>Notice Under Section 248</b></a></p></li>
+                     <li class="impInfoLi" ><p class="cont" style="text-align:justify"><a href="http://www.mca.gov.in/MinistryV2/addressforsendingphysicalcopyofg.a.r.33.html" target="_blank"><img alt="EBIZ" src="{% static "assets\images\logoil\illb.png" %}"/><b>Address For Sending Physical Copy of G.A.R 33</b></a></p></li>
+                     <li class="impInfoLi" ><p class="cont" style="text-align:justify"><a href="http://www.mca.gov.in/mcafoportal/showEformUpload.do" target="_blank"><img alt="EBIZ" src="{% static "assets\images\logoil\illb.png" %}"/><b>Upload eForms</b></a></p></li> 
+                                          
+
+                   </ul>
+                 </div> <!-- .cd-pricing-body -->
+
+
+               </li>
+             </ul> <!-- .cd-pricing-wrapper -->
+           </li>
+
+           <li class="cd-popular">
+            <ul class="cd-pricing-wrapper">
+              <li data-type="monthly" class="is-visible">
+
+                <div class="cd-pricing-body">
+                  <ul class="cd-pricing-features "style="text-align:justify">
+                    <li class="impInfoLi"><p class="cont" style="text-align:justify"><a href="http://indiancourts.nic.in/sitesmain.htm" target="_blank"><img alt="High Courts" src="{% static "assets\images\logoil\hc.png" %}"/><b>High Courts</b></a></p></li>
+                    <li class="impInfoLi"><p class="cont" style="text-align:justify"><a href="https://www.sci.gov.in/judgments" target="_blank"><img alt="Supreme Courts" src="{% static "assets\images\logoil\hc.png" %}"/><b>Supreme Courts</b></a></p></li>
+                    <li class="impInfoLi"><p class="cont" style="text-align:justify"><a href="http://nclat.nic.in/" target="_blank"><img alt="NCLAT" src="{% static "assets\images\logoil\illb.png" %}"/><b>National Company Law Appellate Tribunal</b></a></p></li>
+                    <li class="impInfoLi"><p class="cont" style="text-align:justify"><a href="http://sat.gov.in/" target="_blank"><img border="0" alt="SAT" src="{% static "assets\images\logoil\sat.png" %}"/><b>Securities Appellate Tribunal</b></a></p></li>
+                    <li class="impInfoLi"><p class="cont" style="text-align:justify"><a href="https://www.icai.org/" target="_blank"><img border="0" alt="ICAI" src="{% static "assets\images\logoil\icai.png" %}"/><b>Institute of Chartered Accountants of India</b></a></p></li>
+                    <li class="impInfoLi"><p class="cont" style="text-align:justify"><a href="https://www.icsi.edu/" target="_blank"><img border="0" alt="ICSI" src="{% static "assets\images\logoil\icsi.png" %}"/><b>Institute of Company Seceraties of India</b></a></p></li>
+                    <li class="impInfoLi"><p class="cont" style="text-align:justify"><a href="https://nclt.gov.in/" target="_blank"><img border="0" alt="Error" src="{% static "assets\images\logoil\NCLT.jpg" %}"/><b>National Company Law Tribunal</b></a></p></li>
+
+                  </ul>
+                </div> <!-- .cd-pricing-body -->
+
+              </li>
+
+              <li data-type="yearly" class="is-hidden">
+
+                <div class="cd-pricing-body">
+                 <ul class="cd-pricing-features "style="text-align:justify">
+                  <li class="impInfoLi" ><p class="cont" style="text-align:justify"><a href="http://www.mca.gov.in/mcafoportal/subsidiaryDetails.do" target="_blank"><img alt="EBIZ" src="{% static "assets\images\logoil\illb.png" %}"/><b>Upload Subsidary Details</b></a></p></li> 
+                  <li class="impInfoLi" ><p class="cont" style="text-align:justify"><a href="http://www.mca.gov.in/MinistryV2/aboutfiling_llp_business_user.html" target="_blank"><img alt="EBIZ" src="{% static "assets\images\logoil\illb.png" %}"/><b>LLP Services For Business User</b></a></p></li> 
+                  <li class="impInfoLi" ><p class="cont" style="text-align:justify"><a href="http://www.mca.gov.in/MinistryV2/annualreports.html" target="_blank"><img alt="EBIZ" src="{% static "assets\images\logoil\illb.png" %}"/><b>Reports</b></a></p></li>
+                  <li class="impInfoLi" ><p class="cont" style="text-align:justify"><a href="http://www.mca.gov.in/MinistryV2/master+details.html" target="_blank"><img alt="EBIZ" src="{% static "assets\images\logoil\illb.png" %}"/><b>Master Details</b></a></p></li>
+                  <li class="impInfoLi" ><p class="cont" style="text-align:justify"><a href="http://www.mca.gov.in/MinistryV2/indianandforeigncompaniesllps.html" target="_blank"><img alt="EBIZ" src="{% static "assets\images\logoil\illb.png" %}"/><b>Indian And Foreign Companies,LLPs</b></a></p></li>
+                  <li class="impInfoLi" ><p class="cont" style="text-align:justify"><a href="http://www.mca.gov.in/MinistryV2/complaints.html" target="_blank"><img alt="EBIZ" src="{% static "assets\images\logoil\illb.png" %}"/><b>Complaints</b></a></p></li>
+
+                </ul>
+              </div> <!-- .cd-pricing-body -->
+
+            </li>
+          </ul> <!-- .cd-pricing-wrapper -->
+        </li>
+
+      </ul> <!-- .cd-pricing-list -->
+    </div> <!-- .cd-pricing-container -->
+
+  </div>
+
+  <section id="about" class="features sections" style="padding-top: 10px; padding-bottom: 20px">
+    <div class="container">
+      <div class="row">
+        <div class="main_features_content2">
+          <div class="col-sm-8">
+            <div class="single_features_right "><br>
+              <h2 class="conthe"><b>Who are we?</b></h2>
+              <p class="hewvr"><strong>OUR ORGANIZATION</strong> <br>
+                <p class="contwvr">&nbspRAY ADVISORS is a leading organization of Company Secretaries with a team of seasoned and competent individuals providing high end services in the field of Corporate Laws and compliances. Since inception, RAY ADVISORS has always put the Client’s interest on the forefront and has been delivering quality and prompt services in the areas of Company Law and Compliance Practice.
+                  RAY ADVISORS is committed to maintain highest professional standards and business ethics.<br>
+                  The Organization today has three partners who are qualified company Secretaries and well experienced in their respective service domains. The Organization also boasts a team of qualified company secretaries in its staff.<br>
+                  Other professionals in the employee are Management Trainees. The Organization is ably supported by a strong network of Associate Practising Company Secretaries, Lawyers and Consultants from various fields of expertise.
+                </p>
+              </p>
+              <div class="features_buttom">
+                <a href="{% url "front:about" %}" class="btn btn-default">Know More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4"><br><br><br><br><br><br><br>
+            <div class="single_features_left text-center">
+              <img src="{% static "assets/images/me2.png" %}" alt="" />
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section><!--End of Who we are Section -->
+
+<section id="contact" class="service2 sections lightbg " style="padding-bottom: 10px">
+    <div class="row jumbotron" >
+      <div class="col-sm-4">
+       <br><br>
+       <div class="wpb_wrapper" ><br>
+        <p class="con" style="text-align: center;"><b>Our Blogs</b></p><br><br>
+          <div class="cor"> 
+         {% for p in object_list %}
+         <ul>
+         <li><p style=" color: black;" ><i class="fa fa-edit">&nbsp&nbsp</i><b style=" color: grey;">
+          <a href="{% url 'front:post_detail' id=p.id %}" target="_blank">{{ p.title }}</a></p></li></b>
+         {% endfor %}
+         </ul></a>
+         </div>
+
+      </div>
+      <div class="center-content">
+              <a href="{% url 'AdminDashboard:allp' %}" target="_blank"><input type="submit" value="View All Posts" class="btn btn-default1"></a>
+            </div>
+    </div>
+    <div class="contact_content">
+      <div class="col-sm-4">
+        <p class="con" style="text-align: center;"><b>Feedback</b></p><br><br>
+        <div class="single_left_contact">
+          <form action="{% url 'front:feedback' %}" id="formid" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+              <input type="text" class="form-control" name="name" placeholder="Your Name" required="">
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" name="email" placeholder="Email" required="">
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" name="message" rows="8" placeholder="Message"></textarea>
+            </div>
+            <div class="center-content">
+              <input type="submit" value="Submit" class="btn btn-default">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="wpb_wrapper">
+        <p class="cor" style="text-align: center;"><b>Contact Us</b></p><br><br>
+        <p class="cor" style="size: 1em;"><b>Address 1:</b> 102, NDM-2, Netaji Subhash Place,New   
+          Delhi-110034<br><b>Contact Number:</b>&nbsp9999577665(Yogesh Maheshwari)<br><br>
+          <b>Address 2:</b> 611,Vishal Tower,District Centre,Janakpuri,New Delhi-110058 <br><b>Contact Number:</b>&nbsp9999980750(Rahul Malhotra)<br> </p>
+      </div>
+    </div>
+  </div>
+</section><!-- End of Contact Section -->
+
+
+{% endblock %}

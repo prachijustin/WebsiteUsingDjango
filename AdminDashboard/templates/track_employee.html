@@ -1,0 +1,106 @@
+{% extends "dashboard.html" %}
+{% block body_block1 %}
+
+<h3 class="title-3">Employees with assigned work</h3> 
+<div class="table-data__tool">
+  <div class="table-responsive table-responsive-data2">
+    <table class="table table-data2">
+      <thead>
+        <tr>
+          <th>S.No.</th>
+          <th>employee name</th>
+          <th>work title</th>
+          <th>status</th>
+          <th>Reporting date</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr class="tr-shadow">
+          {% for p in emp_list %}
+          <td>{{ forloop.counter }}</td>
+          <td>{{ p.emp_name }}</td>
+          <td>{{ p.work_title }}</td>
+          {% if p.work_progress == 'Done' %}
+            <td><span style='color:green;'>{{ p.work_progress }}</span></td>
+          {% elif p.work_progress == 'Pending' %}
+            <td><span style='color:red;'>{{ p.work_progress }}</span></td>
+          {% endif %}
+          <td>{{ p.report_date }}</td>
+          <td>
+            <div class="table-data-feature">
+              <a href='{% url 'AdminDashboard:track_emp_reason' id=p.id %}' class="item" data-toggle="tooltip" data-placement="top" role="button" title="View Reason" target="_blank">
+                <i class="fa fa-eye"></i>
+              </a>
+            </div>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
+
+
+
+
+      {% block body_block2 %}
+  <li class="list-inline-item">Track Employees</li>
+  <li class="list-inline-item seprate">
+        <span>/</span>
+        <li class="list-inline-item">Check Employees Progress</li>
+        {% endblock %}
+
+
+
+
+        {% block body_block3 %}
+                        <li >
+                            <a href="{% url 'AdminDashboard:dashboard' %}">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                        </li>
+
+
+                        <li>
+                            <a  href="{% url 'AdminDashboard:add_employee' %}">
+                                <i class="fa fa-user-plus"></i>Add Employee
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{% url 'AdminDashboard:all_employees' %}">
+                                <i class="fa fa-group"></i>All Employees</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'AdminDashboard:assign_work' %}">
+                                <i class="fa fa-tasks"></i>Assign Work</a>
+                        </li>
+                        <li class="active">
+                            <a href="{% url 'AdminDashboard:track_emp_list' %}">
+                                <i class="fa fa-map-marker"></i>Track Employees</a>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-copy"></i>Blogs
+                                <span class="arrow">
+                                    <i class="fas fa-angle-down"></i>
+                                </span>
+                            </a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="{% url 'AdminDashboard:add_post' %}">
+                                        <i class="fas fa-user"></i>Add New Post</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'AdminDashboard:all_posts' %}">
+                                        <i class="fas fa-sign-in-alt"></i>All Posts</a>
+                                </li>
+                            </ul>
+                             <li>
+                                  <a href="{% url 'AdminDashboard:feedback' %}">
+                                    <i class="fa fa-pencil-square-o"></i>Feedback</a>
+                                </li>
+                        </li>
+                      
+    {% endblock %}

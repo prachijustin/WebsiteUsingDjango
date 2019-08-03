@@ -1,0 +1,343 @@
+{% load staticfiles %}
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Search Company</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+    <!--Google fonts links-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{% static "css1/bootstrap.min.css" %}">
+    
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="{% static "assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js" %}"></script>
+    <!--For Plugins external css-->
+    <link rel="stylesheet" href="{% static "css1/plugins.css" %}"/>
+    
+    <link rel="stylesheet" href="{% static "css1/roboto-webfont.css" %}"/>
+    
+    <!--Theme custom css -->
+    <link rel="stylesheet" href="{% static "css1/style.css" %}">
+    
+    <!--Theme Responsive css-->
+    <link rel="stylesheet" href="{% static "css1/responsive.css" %}"/>
+    <link rel="stylesheet" href="{% static "css1/modal.css" %}"/>
+    <style>
+        .container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse {
+    margin-right: -116px;
+    margin-left: -118px;
+    height: 85px;
+
+}
+.navbar-default {
+
+    background-color: white;
+
+}
+    </style>
+    <!-- <script src="{% static "js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script> -->
+  
+    <style>
+        .search-results{
+            position: absolute;
+            top: 40%;
+            left: -17%;
+        }
+        .search-results .result{
+            background: white;
+            padding: 1em;
+            border-bottom: 1px solid #f3f3f3;
+        }
+        .search-results .result .company-name{
+            
+            margin-left: 1em;
+            margin-right: 1em;
+        }
+        .search-results .result .company-cin{
+            /* margin-left: 1em; */
+            color: silver;
+            margin-right: 1em;
+        }
+        .search-results .result .company-state{
+            /* margin-left: 1em; */
+            /* margin-right: 1em; */
+        }
+        .flex{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <nav class="navbar navbar-default">
+            <div class="container">
+              <!-- Brand and oggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url "index" %}"><img src="{% static "assets/images/logo.jpg" %}" alt="Logo" style="padding-top:0px; width: 197px" /></a>
+              </div>
+
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="{% url "index" %}">Home</a></li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Acts and Rules <i class="fa fa-caret-down"></i>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" style ="background-color:#6e727a; width: 300px" >
+                      <p class="navla"><a class="dropdown-item" target="_blank" href="http://www.mca.gov.in/Ministry/pdf/ProvisionsTable_CompAct.pdf" style="color:white; font-size:14px;">Companies Act 2013</a></p>
+                      <p class="navla"><a class="dropdown-item" target="_blank" href="http://www.mca.gov.in/MinistryV2/insolvency+and+bankruptcy+code.html" style="color:white; font-size:14px">Insolvency and Bankruptcy Code. 2016</a></p>
+                      <p class="navla"><a class="dropdown-item" target="_blank" href="http://www.mca.gov.in/MinistryV2/competitionact.html" style="color:white; font-size:14px;">Companies Act,2002</a></p>
+                      <p class="navla"><a class="dropdown-item" target="_blank" href="http://www.mca.gov.in/MinistryV2/partnershipact.html"style="color:white; font-size:14px">Patnership Act,1932</a></p>
+                      <p class="navla"><a class="dropdown-item" target="_blank" href="http://www.mca.gov.in/MinistryV2/llpact.html" style="color:white; font-size:14px">Limited Liability Partnership Act. 2008</a></p>
+                      <p class="navla"><a class="dropdown-item" target="_blank" href="http://www.mca.gov.in/MinistryV2/charteredaccountantsact.html"style="color:white; font-size:14px">Chartered Accountants Act,1949</a></p>
+                      <p class="navla"><a class="dropdown-item" target="_blank" href="http://www.mca.gov.in/MinistryV2/costandworksact.html" style="color:white; font-size:14px">Cost and Works Accountants Act,1959</a></p>
+                      <p class="navla"><a class="dropdown-item" target="_blank" href="http://www.mca.gov.in/MinistryV2/thecompanysecretariesact.html" style="color:white; font-size:14px">Company Secretaries Act,1980</a></p>
+                      <p class="navla"><a class="dropdown-item" target="_blank" href="http://www.mca.gov.in/MinistryV2/societiesregistrationact.html"style="color:white; font-size:14px">Societies Registration Act,1860</a></p>
+                      <p class="navla"><a class="dropdown-item" target="_blank" href="http://www.mca.gov.in/MinistryV2/companiesdonationtonationalfundact1951.html"style="color:white; font-size:14px">Company (Donation to National) Fund Act, 1951</a></p>
+                      <p class="navla"><a class="dropdown-item" target="_blank" href="http://www.mca.gov.in/MinistryV2/othercirculars.html"style="color:white; font-size:14px">Other Circulars</a></p>
+                      </div>
+                  </li>
+                  <li><a href="{% url 'index' %}#link">Links</a></li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Services <i class="fa fa-caret-down"></i>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" style ="background-color:#6e727a; width: 300px" >
+                      <p class="navla"><a class="dropdown-item" href="{% url "front:new1" %}" style="color:white; font-size:14px;">Companies Act 2013</a></p>
+                      <p class="navla"><a class="dropdown-item" href="{% url "front:new2" %}" style="color:white; font-size:14px">National Company Law Tribunal Services</a></p>
+                      <p class="navla"><a class="dropdown-item" href="{% url "front:new3" %}" style="color:white; font-size:14px;">Foreign Exchange Management Act. 1999[FEMA]</a></p>
+                      <p class="navla"><a class="dropdown-item" href="{% url "front:new4" %}"style="color:white; font-size:14px">Foreign Contribution (Regulation) Act. 2010</a></p>
+                      <p class="navla"><a class="dropdown-item" href="{% url "front:new5" %}" style="color:white; font-size:14px">Limited Liability Partnership Act. 2008</a></p>
+                      <p class="navla"><a class="dropdown-item" href="{% url "front:new10" %}"style="color:white; font-size:14px">Intellectual Property Rights</a></p>
+                      <p class="navla"><a class="dropdown-item" href="{% url "front:new7" %}" style="color:white; font-size:14px">SEBI and Securities Laws</a></p>
+                      <p class="navla"><a class="dropdown-item" href="{% url "front:new8" %}" style="color:white; font-size:14px">Auditing and Taxation</a></p>
+                      <p class="navla"><a class="dropdown-item" href="{% url "front:new9" %}"style="color:white; font-size:14px">Other Services</a></p>
+                      </div>
+                  </li>
+                  <li><a href="{% url 'Search_Company:search_company' %}" target="_blank">Search Company</a></li>
+                  <li><a href="{% url 'index' %}#about"#about">About Us</a></li>
+                  <li><a href="{% url 'index' %}#contact"#contact">Contact</a></li>
+                   <li class="login"><a href="#" data-target="#selectid" data-toggle="modal">ADMIN</a></li>
+                   <li class="login"><a href="{% url "EmployeeDashboard:emp_auth" %}">EMPLOYEE</a>
+                   </li>
+
+                </ul>
+
+              </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+          </nav>
+      <div class="modal fade" id="selectid" role="dialog">
+         <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Admin verification</h4>
+            </div>
+            <div class="modal-body">
+              <form id="newModalForm">
+                <label for="admin_id">Admin ID:</label>
+                <input type="text"  id="admin_id" name="admin_id" placeholder="Enter admin id" />
+              </form>
+            </div>
+            <div class="modal-footer">
+              <a href="#" data-target="" data-toggle="modal" id ="modal1">
+              <button type="button" class="btn btn-success btn-sm" id="btnSaveIt">Submit</button>
+            </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="modal fade" id="select" role="dialog">
+        <div class="modal-dialog modal-md">
+
+          <!-- Modal content no 1-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title text-center form-title">Register / Login</h4>
+            </div>
+            <div class="modal-body padtrbl">
+
+              <div class="modal-body">
+               <div class="col-md-6">
+                 <center>
+                  <a href="{% url 'AdminDashboard:reg' %}"  role="button" class="btn btn-primary" title="Register">Register</a></center>
+                 </div>
+                 <div class="col-md-6">
+                   <center>
+                     <a href="{% url 'AdminDashboard:user_login' %}" role="button" class="btn btn-success" title="Login">Login</a></center>
+                   </div>
+                 </div>
+                 <hr>
+               </div>
+             </div>
+           </div>
+         </div>
+        
+        
+        <!--Home page style-->
+        <header id="home" class="home">
+            <div class="overlay-fluid-block">
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="home-wrapper">
+                            <div class="col-md-10 col-md-offset-1">
+                                <div class="home-content">
+                                    
+                                    <h1>SEARCH HERE FOR OVER 14LAKH COMPANIES!</h1>
+                                    <p align ="center">Ray Advisors LLP provides you an online platform where you can search for a company registered under <br> Ministry of Corporate Affairs,Government of India. </p>                                    
+                                    <div class="row">
+                                        <div class="col-md-12 col-md-offset-2 col-sm-12 col-xs-12">
+                                            <div class="home-contact col-md-12">
+                                                <div class="input-group">
+                                                    <!-- <form id="#target" method="GET"> -->
+                                                        <!-- {% csrf_token %} -->
+                                                        <input type="text" class="search-input form-control" name="s" placeholder="Enter company name or CIN">
+                                                        
+                                                        <!-- <input type="submit" class="form-control" value="Search"></a> -->
+                                                        <!-- </form> -->
+                                                        
+                                                    </div><!-- /input-group -->
+                                                    
+                                                </div>
+                                                <div class="search-results col-md-12"></div>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>          
+                </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+             </header>
+              <footer id="footer" class="footer" style="background:black; padding-bottom:9px;">
+                <div class="container">
+    <div class="footer-wrapper">
+      <div class="copyright">
+        <p style="color:white">© Copyright 2018. All Rights Reserved. </p>
+      </div>
+    </div>
+  </div>
+</footer>
+            <!-- <script src="{% static "js/search.js" %}"></script> -->
+            <script>
+                $(document).ready(function(){
+                    
+                    var search = {
+                        listeners: function(){
+                            $('.search-input').keyup(function(){
+                                try{
+                                    var searchTerm = $(this).val();
+                                    var minCharacters = 3;
+                                    
+                                    // Check if characters are more than minCharacters
+                                    if (searchTerm.length >= minCharacters){
+                                        search.read(searchTerm);
+                                    }
+                                    else{
+                                        $('.search-results').html(' ')
+                                    }
+                                }
+                                catch(ex){
+                                    console.log(ex);
+                                }
+                            });
+                        },
+                        read: function(searchTerm){
+                            try{
+                                var data = {'searchTerm': searchTerm};
+                                var url = "/SearchCompany/search"
+                                $.ajax({
+                                    url: url,
+                                    data: data,
+                                    type: 'GET',
+                                    success: function(response){
+                                        try{
+                                            // response = JSON.parse(response);
+                                            console.log("Response ", response);
+                                            if (response.length != 0){
+                                                // Now append search results
+                                                search.build(response);
+                                            }
+                                        }
+                                        catch(ex){
+                                            console.log(ex);
+                                        }
+                                    }
+                                });
+                            }
+                            catch(ex){
+                                console.log(ex);
+                            }
+                        },
+                        
+                        build: function(response){
+                            var data = response;
+                            var target = '.search-results';
+                            var appendable = "";
+                            
+                            // Clearing out the search result div first
+                            $(target).html('');
+                            
+                            for (x in data){
+                                appendable += '<a href="/SearchCompany/company?cin='+data[x].cin+'&state='+data[x].state+'"><div class="result flex col-md-12">'+
+                                    '<div class="company-name col-md-6">'+data[x].name+'</div>'+
+                                    '<div class="company-cin col-md-3">'+data[x].cin+'</div>'+
+                                    '<div class="company-state col-md-3">'+data[x].state+'</div>'+
+                                    '</div></a>';
+                                }
+                                // Append the results on screen
+                                $(target).append(appendable);
+                            },
+                        };
+                        
+                        search.listeners();
+                    });
+                </script>
+               <script>
+         $(document).ready(function(){
+           $("#btnSaveIt").click(function(){
+            $id="admin"
+              if($('#admin_id').val()==$id){
+              $("#modal1").attr("data-target", "#select");
+           }
+           else
+           {
+             $("#select").hide();
+             $("#modal1").attr("data-target", "#"); 
+             alert("Enter a valid id"); 
+           }
+         });
+         })
+       </script>   
+            </body>
+            </html>
+            

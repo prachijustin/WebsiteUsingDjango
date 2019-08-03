@@ -1,0 +1,103 @@
+{% extends "employee_dashboard.html" %}
+{% block body_block1 %}
+
+<h3 class="title-3">Assigned Work</h3> 
+<div class="table-data__tool">
+  <div class="table-responsive table-responsive-data2">
+    <table class="table table-data2">
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>WORK TITLE</th>
+          <th>assigned DATE</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for p in object_list %}
+        <tr class="tr-shadow">
+          <td>{{ forloop.counter }}</td>
+          <td>{{ p.work_title }}</td>
+          <td>{{ p.work_date }}</td>
+          <td>
+            <div class="table-data-feature">
+              <a href='{% url "EmployeeDashboard:emp_work_detail" id=p.id %}' class="item" data-toggle="modal" data-target="#myModal" data-placement="top" role="button" title="View Work">
+              <i class="fa fa-eye"></i>
+              </a>
+            </div>
+          </td>
+        </tr>
+        <!-- modal to view the work content -->
+       <!--  
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Work description</h4>
+              </div>
+              <div class="modal-body">
+                <p>{{ p.work_content }}</p>
+              </div>
+             <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title text-center form-title">Work Description</h4>
+              </div>
+              <div class="modal-body padtrbl">
+                <div class="login-box-body">
+                  <h5>{{ p.work_content }}</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+</div>
+{% endblock %}
+
+
+
+
+{% block body_block2 %}
+
+
+<li class="list-inline-item">Assigned Work</li>
+
+
+{% endblock %}
+
+
+
+
+{% block body_block3 %}
+<li>
+  <a href="{% url 'EmployeeDashboard:employee_dashboard' %}">
+    <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+  </li>
+
+
+  <li class="active">
+    <a  href="{% url 'EmployeeDashboard:emp_assign_work' %}">
+      <i class="fa fa-tasks"></i>Assigned Work
+    </a>
+  </li>
+
+  <li>
+    <a href="{% url 'EmployeeDashboard:report_work' %}">
+      <i class="fa fa-book"></i>Report Work
+    </a>
+  </li>
+
+  {% endblock %}

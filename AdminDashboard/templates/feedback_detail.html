@@ -1,0 +1,92 @@
+{% extends "dashboard_base.html" %}
+{% block body_block1 %}
+
+<h3 class="title-3">Feedback Details</h3> <br>
+  <div class="container">
+    <div class="jumbotron">
+
+         
+      <h1 class="mt-2">{{ name }}</h1>
+
+        <p class="lead">
+         on
+          <a href="#">{{ instance.date }}</a>
+        </p>
+      <hr>
+      <fieldset><p>{{ message}}</p></fieldset>
+      
+     
+     
+    </div>
+  </div>
+ {% endblock %}
+
+
+    {% block body_block4 %}
+      <!-- messgae modal -->
+      {% endblock %}
+
+
+
+
+    {% block body_block2 %}
+    <li class="list-inline-item">Feedback Details</li>
+    {% endblock %}
+
+
+
+
+    {% block body_block3 %}
+    <li>
+      <a href="{% url 'AdminDashboard:dashboard' %}">
+        <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+      </li>
+
+
+      <li>
+        <a  href="{% url 'AdminDashboard:add_employee' %}">
+          <i class="fa fa-user-plus"></i>Add Employee
+        </a>
+      </li>
+
+      <li>
+        <a href="{% url 'AdminDashboard:all_employees' %}">
+          <i class="fa fa-group"></i>All Employees</a>
+        </li>
+        <li>
+          <a href="{% url 'AdminDashboard:assign_work' %}">
+            <i class="fa fa-tasks"></i>Assign Work</a>
+          </li>
+          <li>
+            <a href="{% url 'AdminDashboard:track_emp_list' %}">
+              <i class="fa fa-map-marker"></i>Track Employees</a>
+            </li>
+            <li class="has-sub">
+              <a class="js-arrow" href="#">
+                <i class="fas fa-copy"></i>Blogs
+                <span class="arrow">
+                  <i class="fas fa-angle-down"></i>
+                </span>
+              </a>
+              <ul class="list-unstyled navbar__sub-list js-sub-list">
+                <li >
+                  <a href="{% url 'AdminDashboard:add_post' %}">
+                    <i class="fas fa-user"></i>Add New Post</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'AdminDashboard:all_posts' %}">
+                      <i class="fas fa-sign-in-alt"></i>All Posts</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="active">
+                  <a href="{% url 'AdminDashboard:feedback' %}">
+                    <i class="fa fa-pencil-square-o"></i>Feedback</a>
+                  </li>
+
+               
+                  {% endblock %}
+
+
+
+ 

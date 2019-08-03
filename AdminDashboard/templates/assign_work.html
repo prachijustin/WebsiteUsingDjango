@@ -1,0 +1,101 @@
+{% extends "dashboard_base.html" %}
+{% block body_block1 %}
+<h3 class="title-3">Assign Work</h3>
+<br>
+<form class="form-horizontal" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    <div class="form-group">
+        {{ work_form.emp_name.errors }}
+        <label for="{{ work_form.emp_name.id_for_label }}" class="control-label col-xs-2">*Employee Name:</label>
+        <div class="col-xs-10">  
+            <select id="id_emp_name"  class="form-control" name="emp_name" required="">
+                <option value="" disabled="" selected="selected">--SELECT--</option>
+                {% for e in emp_list %}
+                <option value="{{ e.id }}">{{ e.emp_name }}</option>
+                {% endfor %}
+            </select>         
+        </div>
+    </div>
+
+    <div class="form-group">
+        {{ work_form.work_title.errors }}
+        <label for="{{ work_form.work_title.id_for_label }}" class="control-label col-xs-2">*Work Title:</label>
+        <div class="col-xs-10">
+            <input type="text" class="form-control" name="work_title" placeholder="Work title" >
+        </div>
+    </div>
+
+    <div class="form-group">
+        {{ work_form.work_content.errors }}
+       <label for="{{ work_form.work_content.id_for_label }}" class="control-label col-xs-2">*Work Description:</label>
+        <div class="col-xs-10"> 
+            <textarea type="text" rows=9 class="form-control" name="work_content" placeholder="Work goes here.." ></textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-offset-2 col-xs-10">
+        <input type="submit" class="btn btn-primary" value="Assign">
+        </div>
+    </div>
+</form>
+{% endblock %}
+
+
+
+{% block body_block2 %}
+<li class="list-inline-item">Assign Work</li>
+{% endblock %}
+
+
+
+{% block body_block3 %}
+<li>
+    <a href="{% url 'AdminDashboard:dashboard' %}">
+        <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+    </li>
+
+
+    <li>
+        <a  href="{% url 'AdminDashboard:add_employee' %}">
+            <i class="fa fa-user-plus"></i>Add Employee
+        </a>
+    </li>
+
+    <li>
+        <a href="{% url 'AdminDashboard:all_employees' %}">
+            <i class="fa fa-group"></i>All Employees</a>
+        </li>
+        <li>
+            <a href="{% url 'AdminDashboard:assign_work' %}">
+                <i class="fa fa-tasks"></i>Assign Work</a>
+            </li>
+            <li>
+                <a href="{% url 'AdminDashboard:track_emp_list' %}">
+                    <i class="fa fa-map-marker"></i>Track Employees</a>
+                </li>
+                <li class="has-sub">
+                    <a class="js-arrow" href="#">
+                        <i class="fas fa-copy"></i>Blogs
+                        <span class="arrow">
+                            <i class="fas fa-angle-down"></i>
+                        </span>
+                    </a>
+                    <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li class="active">
+                            <a href="{% url 'AdminDashboard:add_post' %}">
+                                <i class="fas fa-user"></i>Add New Post</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'AdminDashboard:all_posts' %}">
+                                    <i class="fas fa-sign-in-alt"></i>All Posts</a>
+                                </li>
+                            </ul>
+                             <li>
+                                  <a href="{% url 'AdminDashboard:feedback' %}">
+                                    <i class="fa fa-pencil-square-o"></i>Feedback</a>
+                                </li>
+                        </li>
+                        
+                            {% endblock %}

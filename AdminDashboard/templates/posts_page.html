@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block body_block %}
+{% load staticfiles %}
+
+
+
+<link href="{% static "layout-1/css/styles.css" %}" rel="stylesheet">
+
+<link href="{% static "layout-1/css/responsive.css" %}" rel="stylesheet">
+<hr>
+<div class="col-xs-12 col-md-6">
+  <form action="" method="GET" class="form-main  form-inline nofloat-xs pull-right pull-left-sm">
+
+    <div class="form-group form-input-fields form-group-lg has-feedback">
+
+      <label class="sr-only" for="search">Search</label>
+      <div class="input-group">
+        <input type="text" class="form-control input-search" name="q" value='{{ request.GET.q }}' placeholder="Search">
+      </div>
+
+      <button type="submit" class="btn btn-lg btn-success btn-submit">
+       Search 
+     </button>
+
+
+   </div>
+
+
+ </form>
+</div>
+</div> 
+<section class="blog-area section">
+  <div class="container">
+    <div class="row">
+      {% for p in object_list %}
+      <div class="col-lg-4 col-md-6">
+        
+        <div class="card h-100">
+          
+          <div class="single-post post-style-1">
+
+            <h4 class="title"><b>{{ p.title }}</b></h4>
+            <a class="btn btn-primary" href="{{ p.get_absolute_url }}" target="_blank"><b>VIEW POST</b></a>
+
+          </div><!-- single-post -->
+          
+        </div><!-- card -->
+
+      </div><!-- col-lg-4 col-md-6 -->
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}
+
+
+

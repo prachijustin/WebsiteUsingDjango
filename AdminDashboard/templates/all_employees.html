@@ -1,0 +1,108 @@
+{% extends "dashboard_base.html" %}
+{% block body_block1 %}
+<h3 class="title-3">All employees</h3> <br>
+<div class="table-data__tool">
+
+
+  <div class="table-responsive table-responsive-data2">
+    <table class="table table-data2">
+      <thead>
+        <tr>
+          <th>S.No.</th>
+          <th>Employee name</th>
+          <th>Email Id</th>
+          <th>Contact no</th>
+          <th>Location</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+       
+        {% for p in object_list %} 
+          <td>{{ forloop.counter }}</td>
+          <td>{{ p.emp_name }}</td>
+          <td>{{ p.email }}</td> 
+          <td>{{ p.contact_no }}</td>
+          <td>{{ p.location }}</td>
+          <td>
+            <div class="table-data-feature">
+              
+             
+              <a href='{% url "AdminDashboard:emp_edit" id=p.id %}'  class="item" data-toggle="tooltip" data-placement="top" role="button" title="Edit">
+                <i class="zmdi zmdi-edit"></i>
+              </a>
+              
+              <a href='{% url "AdminDashboard:emp_delete" id=p.id %}' class="item" data-toggle="tooltip" data-placement="top" role="button" title="Delete">
+                <i class="zmdi zmdi-delete"></i>
+              </a>
+
+            </div>
+          </td>
+        </tr>
+        <tr class="spacer"></tr>
+        {% endfor %}
+        
+        
+      </tbody>
+    </table>
+    {% endblock %}
+
+
+
+
+    {% block body_block2 %}
+    <li class="list-inline-item">All Employees</li>
+    {% endblock %}
+
+
+
+
+    {% block body_block3 %}
+    <li>
+      <a href="{% url 'AdminDashboard:dashboard' %}">
+        <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+      </li>
+
+
+      <li>
+        <a  href="{% url 'AdminDashboard:add_employee' %}">
+          <i class="fa fa-user-plus"></i>Add Employee
+        </a>
+      </li>
+
+      <li class="active">
+        <a href="{% url 'AdminDashboard:all_employees' %}">
+          <i class="fa fa-group"></i>All Employees</a>
+        </li>
+        <li>
+          <a href="{% url 'AdminDashboard:assign_work' %}">
+            <i class="fa fa-tasks"></i>Assign Work</a>
+          </li>
+          <li>
+            <a href="{% url 'AdminDashboard:track_emp_list' %}">
+              <i class="fa fa-map-marker"></i>Track Employees</a>
+            </li>
+            <li class="has-sub">
+              <a class="js-arrow" href="#">
+                <i class="fas fa-copy"></i>Blogs
+                <span class="arrow">
+                  <i class="fas fa-angle-down"></i>
+                </span>
+              </a>
+              <ul class="list-unstyled navbar__sub-list js-sub-list">
+                <li class="active">
+                  <a href="{% url 'AdminDashboard:add_post' %}">
+                    <i class="fas fa-user"></i>Add New Post</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'AdminDashboard:all_posts' %}">
+                      <i class="fas fa-sign-in-alt"></i>All Posts</a>
+                    </li>
+                  </ul>
+                   <li>
+                                  <a href="{% url 'AdminDashboard:feedback' %}">
+                                    <i class="fa fa-pencil-square-o"></i>Feedback</a>
+                                </li>
+                </li>
+               
+                  {% endblock %}

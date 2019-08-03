@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body_block %}
+<hr>
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Home Page</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+    <!--Google fonts links-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+</head>
+<body>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        
+      
+        <div class="container">
+        	<h1 style="color: black; width: 30%; text-align: center;  margin-top: 10px">Company Details</h1><br><br>
+        	<table class="table table-bordered" style="color: black;background: white;">
+        	<tr>
+            	<th>Corporate Indentification Number</th>
+            	<td>{{ CORPORATE_IDENTIFICATION_NUMBER }}</td>
+       		</tr>
+        	<tr>
+            	<th>Date Of Registration</th>
+            	<td>{{ DATE_OF_REGISTRATION }}</td>
+        	</tr>
+        	<tr>
+            	<th>Comapny Name</th>
+            	<td>{{ COMPANY_NAME }}</td>
+        	</tr>
+        	<tr>
+            	<th>Company Status</th>
+            	<td>{{ COMPANY_STATUS }}</td>
+        	</tr>
+        	<tr>
+            	<th>Company Class</th>
+            	<td>{{ COMPANY_CLASS}}</td>
+        	</tr>
+        	<tr>
+            	<th>Company Category</th>
+            	<td>{{ COMPANY_CATEGORY }}</td>
+        	</tr>
+        	<tr>
+           		<th>Authorized Capital</th>
+            	<td>{{ AUTHORIZED_CAPITAL }}</td>
+        	</tr>
+        	<tr>
+            	<th>Paidup Capital</th>
+            	<td>{{ PAIDUP_CAPITAL }}</td>
+        	</tr>
+        	<tr>
+            	<th>Registered State</th>
+            	<td>{{ REGISTERED_STATE }}</td>
+        	</tr>
+        	<tr>
+            	<th>Registrar Of Companies</th>
+            	<td>{{ REGISTRAR_OF_COMPANIES }}</td>
+        	</tr>
+        	<tr>
+            	<th>Principal Business Activity</th>
+            	<td>{{ PRINCIPAL_BUSINESS_ACTIVITY }}</td>
+        	</tr>
+        	<tr>
+            	<th>Registerd Office Address</th>
+            	<td>{{ REGISTERED_OFFICE_ADDRESS }}</td>
+        	</tr>
+        	<tr>
+            	<th>Sub Category</th>
+            	<td>{{ SUB_CATEGORY }}</td>
+        	</tr>
+    		</table><br><br><br><br><br><br>
+        </div>
+                
+            </body>
+            </html>
+            {% endblock %}
+            
+
+
+

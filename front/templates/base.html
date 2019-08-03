@@ -1,0 +1,201 @@
+{% load staticfiles %}
+
+<!doctype html>
+<html class="no-js" lang=""> 
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>RAY Advisors LLP</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    
+   <!--  for blog post -->
+    <link href="{% static "css/blog-post.css" %}" rel="stylesheet">
+    <!--Google fonts links-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "assets/css/bootstrap.min.css" %}">
+
+
+        <!--For Plugins external css-->
+        <link rel="stylesheet" href="{% static "assets/css/plugins.css" %}" />
+        <link rel="stylesheet" href="{% static "assets/css/roboto-webfont.css" %}" />
+
+        <!--Theme custom css -->
+        <link rel="stylesheet" href="{% static "assets/css/style.css" %}">
+        <link rel="stylesheet" href="{% static "assets/css/modal.css" %}">
+
+        <!--Theme Responsive css-->
+        <link rel="stylesheet" href="{% static "assets/css/responsive.css" %}" />
+        <script src="{% static "assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js" %}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- validating admin id -->
+         <script>
+         $(document).ready(function(){
+           $("#btnSaveIt").click(function(){
+            $id="admin"
+              if($('#admin_id').val()==$id){
+              $("#modal1").attr("data-target", "#select");
+           }
+           else
+           {
+             $("#select").hide();
+             $("#modal1").attr("data-target", "#"); 
+             alert("Enter a valid id"); 
+           }
+         });
+         })
+       </script>
+  </head>
+  <body>
+          <nav class="navbar navbar-default">
+            <div class="container">
+              <!-- Brand and oggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url "index" %}"><img src="{% static "assets/images/logo.jpg" %}" alt="Logo" style="padding-top:0px; width: 197px" /></a>
+              </div>
+
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="{% url "index" %}">Home</a></li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Acts and Rules <i class="fa fa-caret-down"></i>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" style ="background-color:#6e727a; width: 300px" >
+                      <p class="navla"><a class="dropdown-item" target="_blank" href="http://www.mca.gov.in/Ministry/pdf/ProvisionsTable_CompAct.pdf" style="color:white; font-size:14px;">Companies Act 2013</a></p>
+                      <p class="navla"><a class="dropdown-item" target="_blank" href="http://www.mca.gov.in/MinistryV2/insolvency+and+bankruptcy+code.html" style="color:white; font-size:14px">Insolvency and Bankruptcy Code. 2016</a></p>
+                      <p class="navla"><a class="dropdown-item" target="_blank" href="http://www.mca.gov.in/MinistryV2/competitionact.html" style="color:white; font-size:14px;">Companies Act,2002</a></p>
+                      <p class="navla"><a class="dropdown-item" target="_blank" href="http://www.mca.gov.in/MinistryV2/partnershipact.html"style="color:white; font-size:14px">Patnership Act,1932</a></p>
+                      <p class="navla"><a class="dropdown-item" target="_blank" href="http://www.mca.gov.in/MinistryV2/llpact.html" style="color:white; font-size:14px">Limited Liability Partnership Act. 2008</a></p>
+                      <p class="navla"><a class="dropdown-item" target="_blank" href="http://www.mca.gov.in/MinistryV2/charteredaccountantsact.html"style="color:white; font-size:14px">Chartered Accountants Act,1949</a></p>
+                      <p class="navla"><a class="dropdown-item" target="_blank" href="http://www.mca.gov.in/MinistryV2/costandworksact.html" style="color:white; font-size:14px">Cost and Works Accountants Act,1959</a></p>
+                      <p class="navla"><a class="dropdown-item" target="_blank" href="http://www.mca.gov.in/MinistryV2/thecompanysecretariesact.html" style="color:white; font-size:14px">Company Secretaries Act,1980</a></p>
+                      <p class="navla"><a class="dropdown-item" target="_blank" href="http://www.mca.gov.in/MinistryV2/societiesregistrationact.html"style="color:white; font-size:14px">Societies Registration Act,1860</a></p>
+                      <p class="navla"><a class="dropdown-item" target="_blank" href="http://www.mca.gov.in/MinistryV2/companiesdonationtonationalfundact1951.html"style="color:white; font-size:14px">Company (Donation to National) Fund Act, 1951</a></p>
+                      <p class="navla"><a class="dropdown-item" target="_blank" href="http://www.mca.gov.in/MinistryV2/othercirculars.html"style="color:white; font-size:14px">Other Circulars</a></p>
+                      </div>
+                  </li>
+                  <li><a href="{% url 'index' %}#link">Links</a></li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Services <i class="fa fa-caret-down"></i>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" style ="background-color:#6e727a; width: 300px" >
+                      <p class="navla"><a class="dropdown-item" href="{% url "front:new1" %}" style="color:white; font-size:14px;">Companies Act 2013</a></p>
+                      <p class="navla"><a class="dropdown-item" href="{% url "front:new2" %}" style="color:white; font-size:14px">National Company Law Tribunal Services</a></p>
+                      <p class="navla"><a class="dropdown-item" href="{% url "front:new3" %}" style="color:white; font-size:14px;">Foreign Exchange Management Act. 1999[FEMA]</a></p>
+                      <p class="navla"><a class="dropdown-item" href="{% url "front:new4" %}"style="color:white; font-size:14px">Foreign Contribution (Regulation) Act. 2010</a></p>
+                      <p class="navla"><a class="dropdown-item" href="{% url "front:new5" %}" style="color:white; font-size:14px">Limited Liability Partnership Act. 2008</a></p>
+                      <p class="navla"><a class="dropdown-item" href="{% url "front:new10" %}"style="color:white; font-size:14px">Intellectual Property Rights</a></p>
+                      <p class="navla"><a class="dropdown-item" href="{% url "front:new7" %}" style="color:white; font-size:14px">SEBI and Securities Laws</a></p>
+                      <p class="navla"><a class="dropdown-item" href="{% url "front:new8" %}" style="color:white; font-size:14px">Auditing and Taxation</a></p>
+                      <p class="navla"><a class="dropdown-item" href="{% url "front:new9" %}"style="color:white; font-size:14px">Other Services</a></p>
+                      </div>
+                  </li>
+                  <li><a href="{% url 'Search_Company:search_company' %}" target="_blank">Search Company</a></li>
+                  <li><a href="{% url 'index' %}#about"#about">About Us</a></li>
+                  <li><a href="{% url 'index' %}#contact"#contact">Contact</a></li>
+                   <li class="login"><a href="#" data-target="#selectid" data-toggle="modal">ADMIN</a></li>
+                   <li class="login"><a href="{% url "EmployeeDashboard:emp_auth" %}">EMPLOYEE</a>
+                   </li>
+
+                </ul>
+
+              </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+          </nav>
+      <div class="modal fade" id="selectid" role="dialog">
+         <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Admin verification</h4>
+            </div>
+            <div class="modal-body">
+              <form id="newModalForm">
+                <label for="admin_id">Admin ID:</label>
+                <input type="text"  id="admin_id" name="admin_id" placeholder="Enter admin id" />
+              </form>
+            </div>
+            <div class="modal-footer">
+              <a href="#" data-target="" data-toggle="modal" id ="modal1">
+              <button type="button" class="btn btn-success btn-sm" id="btnSaveIt">Submit</button>
+            </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="modal fade" id="select" role="dialog">
+        <div class="modal-dialog modal-md">
+
+          <!-- Modal content no 1-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title text-center form-title">Register / Login</h4>
+            </div>
+            <div class="modal-body padtrbl">
+
+              <div class="modal-body">
+               <div class="col-md-6">
+                 <center>
+                  <a href="{% url 'AdminDashboard:reg' %}"  role="button" class="btn btn-primary" title="Register">Register</a></center>
+                 </div>
+                 <div class="col-md-6">
+                   <center>
+                     <a href="{% url 'AdminDashboard:user_login' %}" role="button" class="btn btn-success" title="Login">Login</a></center>
+                   </div>
+                 </div>
+                 <hr>
+               </div>
+             </div>
+           </div>
+         </div>
+         <!--/ Register/Login-->
+
+         {% block body_block %}
+         <!--   your content goes here... -->
+
+         {% endblock %}
+
+
+
+
+         
+<!--Footer-->
+<footer id="footer" class="footer" style="background:black; padding-bottom:120px;">
+  <div class="container">
+    <div class="footer-wrapper">
+      <div class="copyright">
+        <p style="color:white">© Copyright 2018. All Rights Reserved. </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<div class="scrollup">
+  <a href="#"><i class="fa fa-chevron-up"></i></a>
+</div>
+
+
+<script src="{% static "assets/js/vendor/jquery-1.11.2.min.js" %}"></script>
+<script src="{% static "assets/js/vendor/bootstrap.min.js" %}"></script>
+
+<script src="{% static "assets/js/plugins.js" %}"></script>
+<script src="{% static "assets/js/modernizr.js" %}"></script>
+<script src="{% static "assets/js/main.js" %}"></script>
+</body>

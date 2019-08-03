@@ -1,0 +1,96 @@
+{% extends "dashboard.html" %}
+{% block body_block1 %}
+<h1>
+
+</h1>
+
+<h3 class="title-3">hjbdfsbzhjhyju</h3>
+<br>
+<form class="form-horizontal" action="{% url 'AdminDashboard:add_post' %}" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="form-group">
+    <label for="inputTitle" class="control-label col-xs-2">Title Name:</label>
+    <div class="col-xs-10">
+        <input type="text" class="form-control" id="inputTitle"name="title" placeholder="Enter title here" >
+    </div>
+</div>
+<br>
+<div class="form-group">
+    <label for="inputContent" class="control-label col-xs-2">Content:</label>
+    <div class="col-xs-10">
+
+        <textarea class="form-control" rows="20" id="inputContent" name="content" placeholder="Content goes here.." ></textarea>
+    </div>
+</div>
+<div class="form-group">
+    <div class="col-xs-offset-2 col-xs-10">
+        <button type="submit" class="btn btn-primary">Publish</button>
+    </div>
+</div>
+</form>
+{% endblock %}
+
+
+
+{% block body_block2 %}
+
+<li class="list-inline-item">Posts</li>
+<li class="list-inline-item seprate">
+    <span>/</span>
+
+    <li class="list-inline-item">Edit Posts</li>
+
+
+    {% endblock %}
+
+
+
+    {% block body_block3 %}
+    <li >
+        <a href="{% url 'AdminDashboard:dashboard' %}">
+            <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+        </li>
+
+
+        <li>
+            <a  href="{% url 'AdminDashboard:add_employee' %}">
+                <i class="fa fa-user-plus"></i>Add Employee
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'AdminDashboard:all_employees' %}">
+                <i class="fa fa-group"></i>All Employees</a>
+            </li>
+            <li>
+                <a href="{% url 'AdminDashboard:assign_work' %}">
+                    <i class="fa fa-tasks"></i>Assign Work</a>
+                </li>
+                <li>
+                    <a href="{% url 'AdminDashboard:track_emp_list' %}">
+                        <i class="fa fa-map-marker"></i>Track Employees</a>
+                    </li>
+                    <li class="has-sub">
+                        <a class="js-arrow" href="#">
+                            <i class="fas fa-copy"></i>Blogs
+                            <span class="arrow">
+                                <i class="fas fa-angle-down"></i>
+                            </span>
+                        </a>
+                        <ul class="list-unstyled navbar__sub-list js-sub-list">
+                            <li>
+                                <a href="{% url 'AdminDashboard:add_post' %}">
+                                    <i class="fas fa-user"></i>Add New Post</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'AdminDashboard:all_posts' %}">
+                                        <i class="fas fa-sign-in-alt"></i>All Posts</a>
+                                    </li>
+                                </ul>
+                                <li>
+                                  <a href="{% url 'AdminDashboard:feedback' %}">
+                                    <i class="fa fa-pencil-square-o"></i>Feedback</a>
+                                </li>
+                            </li>
+                            
+                            {% endblock %}

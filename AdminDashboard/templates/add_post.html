@@ -1,0 +1,137 @@
+{% extends "dashboard.html" %}
+{% block body_block1 %}
+{% if not form.instance.pk %}
+<h3 class="title-3">Add New Post</h3>
+{% else %}
+<h3 class="title-3">Edit Post</h3>
+{% endif %}
+
+<br>
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="form-group">
+        <label>{{form.title.label_tag}}</label>
+       
+    {{ form.title }}
+    <br>
+    <td class="demo-inline-content"
+    <div class="tinymce-body">
+    <label>{{form.content.label_tag}}</label>
+    {{ form.content }}
+</div>
+</td>
+    <br>
+    <label>{{form.image.label_tag}}</label>
+    {{ form.image }}
+    <br>
+    <label>{{form.draft.label_tag}}</label>
+    {{ form.draft }}
+    <br>
+    <label>{{form.publish.label_tag}}</label>
+    {{ form.publish }}
+</div>
+    <input class="btn btn-success" type="submit" value="Save">
+
+
+</form>
+
+
+{% endblock %}
+
+
+
+{% block body_block2 %}
+
+<li class="list-inline-item">Posts</li>
+<li class="list-inline-item seprate">
+    <span>/</span>
+
+    <li class="list-inline-item">Add New Posts</li>
+
+
+    {% endblock %}
+
+
+
+    {% block body_block3 %}
+                        <li>
+                            <a href="{% url 'AdminDashboard:dashboard' %}">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                        </li>
+
+
+                        <li>
+                            <a  href="{% url 'AdminDashboard:add_employee' %}">
+                                <i class="fa fa-user-plus"></i>Add Employee
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{% url 'AdminDashboard:all_employees' %}">
+                                <i class="fa fa-group"></i>All Employees</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'AdminDashboard:assign_work' %}">
+                                <i class="fa fa-tasks"></i>Assign Work</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'AdminDashboard:track_emp_list' %}">
+                                <i class="fa fa-map-marker"></i>Track Employees</a>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-copy"></i>Blogs
+                                <span class="arrow">
+                                    <i class="fas fa-angle-down"></i>
+                                </span>
+                            </a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li class="active">
+                                    <a href="{% url 'AdminDashboard:add_post' %}">
+                                        <i class="fas fa-user"></i>Add New Post</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'AdminDashboard:all_posts' %}">
+                                        <i class="fas fa-sign-in-alt"></i>All Posts</a>
+                                </li>
+                            </ul>
+                             <li>
+                                  <a href="{% url 'AdminDashboard:feedback' %}">
+                                    <i class="fa fa-pencil-square-o"></i>Feedback</a>
+                                </li>
+                        </li>
+ 
+ <script type="text/javascript">
+  var emailBodyConfig = {
+    selector: '.tinymce-body',
+    menubar: false,
+    inline: true,
+    plugins: [
+      'link',
+      'textcolor',
+      'lists',
+      'powerpaste',
+      'linkchecker',
+      'contextmenu',
+      'autolink',
+      'tinymcespellchecker'
+    ],
+    toolbar: [
+      'undo redo | bold italic underline | fontselect fontsizeselect',
+      'forecolor backcolor | alignleft aligncenter alignright alignfull | numlist bullist outdent indent'
+    ],
+    valid_elements: 'p[style],strong,em,span[style],a[href],ul,ol,li',
+    valid_styles: {
+      '*': 'font-size,font-family,color,text-decoration,text-align'
+    },
+    powerpaste_word_import: 'clean',
+    powerpaste_html_import: 'clean',
+    content_css: [
+      '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+    ]
+  };
+
+tinymce.init(emailHeaderConfig);
+tinymce.init(emailBodyConfig);
+ </script>                      
+    {% endblock %}

@@ -1,0 +1,133 @@
+
+.ser
+{
+    background: white;
+    height: 260px;
+	border:2px solid #ececec;
+    width: 230px;
+    margin: 10px 10px 10px 0px;
+    text-align:center;
+	-webkit-box-shadow:2px 2px 5px 0 rgba(55,50,40,.20);
+    color: black;
+	font-family: calibri;
+    font-size: 1.4em;
+}
+.btn-default1 {
+    border-radius: 0px;
+    background: #1f1f7a;
+    color: white;
+    border: 0;
+    max-width: 160px;
+    margin-top: 20px;
+    margin-left: 202px
+
+}
+.modal-body {
+
+    position: relative;
+    padding: 19px;
+    font-size: 1.25em;
+
+}
+.modal-footer {
+    padding: 12px;
+        padding-top: 12px;
+        padding-right: 12px;
+        padding-bottom: 12px;
+        padding-left: 12px;
+    text-align: center;
+    border-top: 1px solid #ececec;
+}
+.jumbotron p {
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 200;
+}
+.container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse {
+    margin-right: -116px;
+    margin-left: -118px;
+}
+
+.navla
+{
+   font-family: calibri;
+    font-size: 1.4em;
+    font: inherit;
+    padding-left: 13px;
+    padding-top: 9px;
+
+}
+.ser:hover{
+    background:rgb(31,31,122);
+    color:#fff;
+}
+.ser:hover img {
+    color:#fff;
+}
+
+.ser:hover p {
+    color:#fff;
+}
+
+.ser img{
+    font-size:60px;
+    color:rgb(31,31,122);
+    margin-bottom: 20px;
+}
+.ser h4{
+    font-size:16px;
+    color:#000;
+    text-transform:uppercase;
+    font-weight:600;
+    letter-spacing:1px;
+    margin-top:15px;
+}
+p{
+    font-size:23px;
+    color:#777777;
+}
+
+.cont
+{
+	font-family: calibri;
+    font-size: 2em;
+    text-align:justify;
+}
+.contwvr
+{
+	font-family: calibri;
+    font-size: 1.3em;
+    text-align:justify;
+}
+.cor
+{
+    font-family: calibri;
+    font-size: 0.8em;
+    padding-left: 88px;
+}
+
+.conthe
+{
+	font-family: calibri;
+    font-size: 2.2em;
+    text-align:center;
+}
+.conthe1
+{
+	font-family: calibri;
+    font-size: 1.8em;
+    text-align:center;
+}
+.footer {
+    margin: 15px;
+    color: #ccc;
+    font-size: 16px;
+	padding-top: 0px;
+	background:black;
+    box-sizing: border-box;
+	text-align: center;
+	height: 55px;
+    margin-bottom:  0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}

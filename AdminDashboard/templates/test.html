@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style type="text/css">
+    .demo-inline {
+      box-shadow: 0px 2px 8px 0px rgba(#000, 0.2);
+      text-align: left;
+      color: rgb(98, 98, 98);
+      font-family: Lato;
+      color: rgb(98, 98, 98);
+      line-height: 1.3;
+      font-size: 14px;
+      background-color: #ffffff;
+      text-align: left;
+      vertical-align: top;
+
+      p {
+        margin: 0 0;
+    }
+
+    h1 {
+        color: #1976d2;
+        font-family: Aileron;
+        font-size: 2em;
+        font-weight: bold;
+        margin: 0 0;
+    }
+
+    h2 {
+        color: #1976d2;
+        font-family: Aileron;
+        font-size: 2em;
+        font-weight: bold;
+    }
+
+    h3 {
+        font-family: Aileron;
+        font-size: 1.5em;
+        color: #403f42;
+        font-weight: bold;
+        color: inherit;
+    }
+
+    h2,
+    h3 {
+        margin-bottom: 0px;
+        margin-top: 0px;
+        line-height: 40px;
+    }
+
+    ul,
+    ol {
+        padding-left: 20px;
+    }
+    ul {
+        list-style: disc;
+    }
+    ol {
+        list-style: decimal;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    textarea {
+        display: none;
+    }
+
+    .demo-inline-content {
+        padding: 20px;
+        text-align: left;
+        vertical-align: top;
+        h3 {
+          color: rgb(98, 98, 98);
+      }
+  }
+
+  *[contentEditable="true"]:focus,
+  *[contentEditable="true"]:hover {
+    outline: 2px solid #2276d2;
+}
+}
+
+</style>
+</head>
+<body>
+    <table cellpadding="0" class="demo-inline" style="width:500px">
+      <tbody>
+        <tr>
+          <td class="demo-inline-content" style="padding-bottom: 0px">
+            <img src='https://www.tiny.cloud/images/email-banner-2.png' style="width:650px">
+        </td>
+    </tr>
+    <tr>
+      <td>
+        <table>
+          <tbody>
+            <tr>
+              <td class="demo-inline-content" style="padding-bottom: 10px">
+                <h2 class="tinymce-heading">The world’s first rich text editor in the cloud</h2>
+                <div class="tinymce-body">
+                  <p>
+                    Have you heard about Tiny Cloud? 
+                    It’s the first step in our journey to help you deliver great content creation experiences, no matter your level of expertise. 
+                    50,000 developers already agree.
+                    They get free access to our global CDN, image proxy services and auto updates to the TinyMCE editor. 
+                    They’re also ready for some exciting updates coming soon.
+                </p>
+                <p></p>
+                <p>
+                    One of these enhancements is <strong>Tiny Drive</strong>: imagine file management for TinyMCE, in the cloud, made super easy. 
+                    Learn more at <a href='https://www.tiny.cloud/tinydrive/'>tiny.cloud/tinydrive</a>, where you’ll find a working demo and an opportunity to provide feedback to the product team.
+                </p>
+            </div>
+        </td>
+        <td class="demo-inline-content">
+            <img width="300px" src='https://www.tiny.cloud/images/image-two.jpg'/>
+        </td>
+    </tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+  <td class="demo-inline-content" style="padding-top: 0px">
+    <h3 class="tinymce-heading">An editor for every project</h3>
+    <div class="tinymce-body">
+      <p>
+        Here are some of our customer’s most common use cases for TinyMCE:
+        <ul>
+          <li>Content Management Systems (<em>e.g. WordPress, Umbraco</em>)</li>
+          <li>Learning Management Systems (<em>e.g. Blackboard</em>)</li>
+          <li>Customer Relationship Management and marketing automation (<em>e.g. Marketo</em>)</li>
+          <li>Email marketing (<em>e.g. Constant Contact</em>)</li>
+          <li>Content creation in SaaS systems (<em>e.g. Eventbrite, Evernote, GoFundMe, Zendesk</em>)</li>
+      </ul>
+  </p>
+
+  <p>
+    And those use cases are just the start. 
+    TinyMCE is incredibly flexible, and with hundreds of APIs there’s likely a solution for your editor project. 
+    If you haven’t experienced Tiny Cloud, get started today. 
+    You’ll even get a free trial of our premium plugins – no credit card required!
+</p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<script>
+    $('textarea.tinymce').ready(function(){
+
+        var emailHeaderConfig = {
+            selector: '.tinymce-heading',
+            menubar: false,
+            inline: true,
+            plugins: [
+            'textcolor',
+            'lists',
+            'powerpaste',
+            'linkchecker',
+            'contextmenu',
+            'autolink'
+            ],
+            toolbar: 'undo redo | bold italic underline',
+            valid_elements: 'strong,em,span[style],a[href]',
+            valid_styles: {
+              '*': 'font-size,font-family,color,text-decoration,text-align'
+          },
+          powerpaste_word_import: 'clean',
+          powerpaste_html_import: 'clean',
+          content_css: [
+          '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+          ]
+      };
+    });
+
+
+</script>
+</body>
+</html>

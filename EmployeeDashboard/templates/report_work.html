@@ -1,0 +1,77 @@
+{% extends "employee_dashboard.html" %}
+{% block body_block1 %}
+<h3 class="title-3">Report Assigned Work</h3>
+<br>
+<form class="form-horizontal" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+{{ form.non_field_errors }}
+    <div class="form-group">
+        {{ report_form.work_title.errors }}
+        <label for="{{ report_form.work_title.id_for_label }}" class="control-label col-xs-2">*Assigned Work Title:</label>
+        <div class="col-xs-10">  
+            <select id="id_work_title"  class="form-control" name="work_title" required="">
+                <option value="" disabled="" selected="selected">--SELECT--</option>
+                {% for w in work_list %}
+                <option value="{{ w.id }}">{{ w.work_title }}</option>
+                {% endfor %}
+            </select>         
+        </div>
+    </div>
+
+    <div class="form-group">
+        {{ report_form.work_progress.errors }}
+        <label for="{{ report_form.work_progress.id_for_label }}" class="control-label col-xs-2">*Status:</label>
+        <div class="col-xs-10">
+            <select id="id_work_progress"  class="form-control" name="work_progress" required="">
+                <option value="" disabled="" selected="selected">--SELECT--</option>
+                <option value="Done">Done</option>
+                <option value="Pending">Pending</option>
+               
+            </select>         
+        </div>
+    </div>
+
+    <div class="form-group">
+        {{ report_form.reason.errors }}
+       <label for="{{ report_form.reason.id_for_label }}" class="control-label col-xs-2">*Reason:</label>
+        <div class="col-xs-10"> 
+            <textarea type="text" rows=5 class="form-control" name="reason" placeholder="You can type NA if the work is done..else type your reason if the work is pending... " ></textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-offset-2 col-xs-10">
+        <input type="submit" class="btn btn-primary" value="Report Work">
+        </div>
+    </div>
+</form>
+{% endblock %}
+
+
+
+{% block body_block2 %}
+<li class="list-inline-item">Report Work</li>
+{% endblock %}
+
+
+
+{% block body_block3 %}
+<li>
+    <a href="{% url 'EmployeeDashboard:employee_dashboard' %}">
+        <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+    </li>
+
+
+    <li>
+        <a  href="{% url 'EmployeeDashboard:emp_assign_work' %}">
+            <i class="fa fa-tasks"></i>Assigned Work
+        </a>
+    </li>
+
+    <li class="active">
+        <a href="{% url 'EmployeeDashboard:report_work' %}">
+            <i class="fa fa-book"></i>Report Work
+        </a>
+    </li>
+
+    {% endblock %}
